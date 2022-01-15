@@ -21,5 +21,14 @@ code {
 
 .unstyled-link {
   text-decoration: none;
-  color: inherit;
+  color: #000;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.active {
+  text-decoration: none;
+  color: #1098f7;
 }

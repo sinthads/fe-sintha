@@ -22,7 +22,7 @@ const SignForm = () => {
         />
         <Label for="examplePassword">Password</Label>
       </FormGroup>
-      <Button>Submit</Button>
+      <Button color="primary">Submit</Button>
     </Form>
   );
 };
