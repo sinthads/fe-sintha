@@ -6,6 +6,7 @@ import BlogList from './components/BlogList';
 import Blogs from './pages/Blogs';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import ObjectFilter from './pages/ObjectFilter';
 import Register from './pages/Register';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="create" element={<BlogCreate />} />
         <Route path="/soal-2/:id" element={<BlogContent />} />
       </Route>
+      <Route path="soal-3" element={<ObjectFilter />} />
     </Routes>
   );
 }

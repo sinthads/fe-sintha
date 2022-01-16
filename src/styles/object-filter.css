@@ -1,0 +1,47 @@
+.object-filter {
+  width: 100%;
+}
+
+.object-filter__title {
+  position: relative;
+  margin: 1.2rem 0 2rem 0;
+  font-size: 1.2rem;
+}
+
+.object-filter__title h3 {
+  font-weight: 700;
+  text-align: center;
+}
+
+.object-filter__title p {
+  position: absolute;
+  left: 0;
+}
+
+.object-filter__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.object-filter__card {
+  padding: 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .object-filter__title {
+    position: relative;
+    margin: 1.2rem 0 2.4rem 0;
+    font-size: 1.2rem;
+  }
+
+  .object-filter__container {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .object-filter__card {
+    width: 30%;
+  }
+}

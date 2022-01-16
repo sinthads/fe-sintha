@@ -13,6 +13,11 @@ const BlogNav = () => {
         </div>
         <div className="header-nav">
           <NavItem>
+            <NavLink to="/" className="unstyled-link">
+              Home
+            </NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink
               end={true}
               to="/soal-2"
@@ -20,7 +25,7 @@ const BlogNav = () => {
                 isActive ? 'unstyled-link active' : 'unstyled-link'
               }
             >
-              Home
+              All Blogs
             </NavLink>
           </NavItem>
           <NavItem>
