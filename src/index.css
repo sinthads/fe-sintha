@@ -32,3 +32,10 @@ code {
   text-decoration: none;
   color: #1098f7;
 }
+
+.centered-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
