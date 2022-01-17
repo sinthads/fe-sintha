@@ -85,11 +85,11 @@ setCatchHandler(({ event }) => {
   switch (event.request.destination) {
     case 'document':
       return caches.match('/offline.html');
-      break;
+    // break;
 
     case 'image':
       return caches.match('OfflineImg.jpg');
-      break;
+    // break;
 
     default:
       return Response.error();
