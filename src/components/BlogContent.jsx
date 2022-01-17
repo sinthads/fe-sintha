@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { Card, CardBody, CardSubtitle, CardTitle } from 'reactstrap';
+import { getBlogbyIdAction } from '../redux/actions';
 
 const BlogContent = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const { blogDetail } = useSelector((state) => state.blog);
+
+  useEffect(() => {
+    dispatch(getBlogbyIdAction(id));
+  }, [dispatch, id]);
 
   return (
     <section id="blog-content" className="blog-content">
@@ -12,17 +20,16 @@ const BlogContent = () => {
           <Link to="/soal-2">
             <p className="content-back">Back</p>
           </Link>
-          <h3>Blog {id}</h3>
+          <h3>{blogDetail.title}</h3>
         </CardTitle>
         <CardSubtitle className="centered-text">
-          <p>Month, Date Year</p>
+          <p>
+            {new Date(blogDetail.date.seconds * 1000).toLocaleDateString(
+              'en-US'
+            )}
+          </p>
         </CardSubtitle>
-        <CardBody>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id expedita,
-          alias in cum laudantium facere iusto ducimus aliquam culpa eos a nobis
-          officia dolores mollitia nam quos dolore tempora, voluptatibus itaque
-          voluptate. Maiores delectus sit ea? Voluptatum hic reiciendis nihil?
-        </CardBody>
+        <CardBody>{blogDetail.content}</CardBody>
       </Card>
     </section>
   );
