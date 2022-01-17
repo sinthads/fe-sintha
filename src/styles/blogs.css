@@ -64,7 +64,8 @@
 }
 
 .create-blog {
-  width: 90%;
+  width: 100%;
+  padding: 1rem 1rem;
 }
 
 .create-blog__text-area {
@@ -93,6 +94,13 @@
   left: 0;
 }
 
+.option-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
 @media screen and (min-width: 768px) {
   .header {
     padding: 1rem 1.4rem;
@@ -104,6 +112,10 @@
 
   .header-nav {
     gap: 2.4rem;
+  }
+
+  .create-blog {
+    padding: 1rem 20%;
   }
 
   .create-blog__text-area {
@@ -130,6 +142,11 @@
 
   .header-nav {
     gap: 3rem;
+  }
+
+  .create-blog {
+    width: 100%;
+    padding: 1rem 30%;
   }
 
   .create-blog__text-area {

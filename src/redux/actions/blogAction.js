@@ -79,7 +79,7 @@ export const createBlogAction = (data, navigate) => {
   };
 };
 
-export const editBlogAction = (id, data, navigate) => {
+export const editBlogAction = (id, data) => {
   const blogDoc = doc(db, 'blogs', id);
 
   return async (dispatch) => {
@@ -91,7 +91,7 @@ export const editBlogAction = (id, data, navigate) => {
       dispatch({
         type: 'EDIT_BLOG_SUCCESS',
       });
-      navigate('/soal-2');
+      dispatch(getBlogsAction());
     } catch (err) {
       dispatch({
         type: 'EDIT_BLOG_FAILED',
