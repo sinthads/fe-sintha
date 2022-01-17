@@ -7,7 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,4 +22,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-serviceWorker.register();
+serviceWorkerRegistration.register();
