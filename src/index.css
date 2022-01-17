@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.unstyled-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.active {
+  text-decoration: none;
+  color: #1098f7;
+}
+
+.centered-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
