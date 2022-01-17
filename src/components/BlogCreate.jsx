@@ -14,7 +14,6 @@ const BlogCreate = () => {
     content: '',
   });
 
-  console.log(inputValue);
   const date = new Date();
 
   function handleInputChange(e) {

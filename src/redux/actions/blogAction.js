@@ -7,6 +7,7 @@ import {
   updateDoc,
   doc,
   getDoc,
+  deleteDoc,
 } from 'firebase/firestore';
 
 const blogCollectionRef = collection(db, 'blogs');
@@ -101,12 +102,18 @@ export const editBlogAction = (id, data, navigate) => {
 };
 
 export const deleteBlogbyIdAction = (id) => {
+  const blogDoc = doc(db, 'blogs', id);
+
   return async (dispatch) => {
     dispatch({
       type: 'ACTION_START',
     });
     try {
-      console.log(id);
+      await deleteDoc(blogDoc);
+      dispatch({
+        type: 'DELETE_BLOG_SUCCESS',
+      });
+      Swal.fire('Deleted!', '', 'success');
     } catch (err) {
       dispatch({
         type: 'DELETE_BLOG_FAILED',

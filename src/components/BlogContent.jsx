@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
-import { Card, CardBody, CardSubtitle, CardTitle } from 'reactstrap';
-import { getBlogbyIdAction } from '../redux/actions';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Button, Card, CardBody, CardSubtitle, CardTitle } from 'reactstrap';
+import { deleteBlogbyIdAction } from '../redux/actions';
 
 const BlogContent = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { blogDetail } = useSelector((state) => state.blog);
+  const navigate = useNavigate();
+  const { blogs } = useSelector((state) => state.blog);
 
-  useEffect(() => {
-    dispatch(getBlogbyIdAction(id));
-  }, [dispatch, id]);
+  const blog = blogs.find((x) => x.id === id);
+
+  const handleDeleteButton = () => {
+    dispatch(deleteBlogbyIdAction(id));
+    navigate('/soal-2');
+  };
 
   return (
     <section id="blog-content" className="blog-content">
@@ -20,17 +24,18 @@ const BlogContent = () => {
           <Link to="/soal-2">
             <p className="content-back">Back</p>
           </Link>
-          <h3>{blogDetail.title}</h3>
+          <h3>{blog.title}</h3>
         </CardTitle>
         <CardSubtitle className="centered-text">
           <p>
-            {new Date(blogDetail.date.seconds * 1000).toLocaleDateString(
-              'en-US'
-            )}
+            {new Date(blog.date.seconds * 1000).toLocaleDateString('en-US')}
           </p>
         </CardSubtitle>
-        <CardBody>{blogDetail.content}</CardBody>
+        <CardBody>{blog.content}</CardBody>
       </Card>
+      <Button color="danger" onClick={handleDeleteButton}>
+        Delete Blog
+      </Button>
     </section>
   );
 };
